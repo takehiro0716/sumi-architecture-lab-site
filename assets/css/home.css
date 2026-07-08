@@ -1,0 +1,77 @@
+/* home.css — index.html only: full-bleed WORKS/PROPOSALS slide gallery */
+
+.slide{
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  display: block;
+  background: var(--ink);
+}
+.slide img{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 1.4s var(--ease);
+}
+.slide:hover img, .slide:focus-visible img{ transform: scale(1.03); }
+
+.slide::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:0; height:42%;
+  background: linear-gradient(0deg, var(--scrim-strong) 0%, var(--scrim-soft) 100%);
+  pointer-events: none;
+}
+
+.slide-caption{
+  position: absolute; left: clamp(1.25rem, 4vw, 3rem); bottom: clamp(1.5rem, 5vh, 3.2rem);
+  z-index: 2;
+}
+.slide-title{
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(1.7rem, 4.6vw, 3.4rem);
+  color: var(--off-white);
+  text-wrap: balance;
+}
+.slide-meta{
+  font-size: clamp(0.8rem, 1.3vw, 0.95rem);
+  color: rgba(239,237,228,0.82);
+  margin-top: 0.5rem;
+  letter-spacing: 0.02em;
+}
+.slide-index{
+  position: absolute; right: clamp(1.25rem, 4vw, 3rem); bottom: clamp(1.5rem, 5vh, 3.2rem);
+  z-index: 2;
+  font-size: 0.76rem; letter-spacing: 0.1em;
+  color: rgba(239,237,228,0.6);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Proposals: slightly shorter, paired hierarchy cue */
+.slide.proposal{ height: 74svh; }
+.slide.proposal .slide-title{ font-size: clamp(1.35rem, 3.2vw, 2.2rem); }
+.proposal-tag{
+  display:inline-block;
+  font-size: 0.66rem; letter-spacing: 0.16em;
+  color: rgba(239,237,228,0.85);
+  border: 1px solid rgba(239,237,228,0.45);
+  padding: 0.25rem 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.section-intro{
+  padding: clamp(3.5rem, 9vw, 6rem) clamp(1.25rem, 4vw, 3rem) clamp(2rem, 5vw, 3rem);
+  max-width: 720px;
+}
+.section-intro .eyebrow{ color: rgba(239,237,228,0.6); }
+.section-intro h2{
+  font-family: var(--serif); font-weight: 500; margin:0;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  text-wrap: balance;
+}
+.section-intro p{
+  margin-top: 0.8rem;
+  font-size: 0.88rem;
+  color: rgba(239,237,228,0.68);
+  max-width: 56ch;
+}

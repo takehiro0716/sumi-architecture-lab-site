@@ -1,0 +1,36 @@
+/* theme-light.css — used by profile.html and contact.html */
+
+:root{
+  --paper: #EDEBE2;
+  --paper-deep: #E1DED2;
+  --paper-line: rgba(27,26,22,0.14);
+  --ink: #1B1A16;
+  --ink-soft: #5B5949;
+  --ink-faint: #8E8B78;
+  --indigo: #2C3E63;
+  --off-white: #EFEDE4;
+
+  --serif: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+  --sans: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Helvetica Neue", sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --icon-border: var(--paper-line);
+  --icon-fg: var(--ink);
+  --icon-bg: var(--paper);
+}
+
+body{ background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.85; }
+
+.site-header{
+  background: rgba(237,235,226,0.92);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--paper-line);
+}
+.wordmark{ color: var(--ink); }
+.wordmark .en{ color: var(--ink-soft); }
+.site-nav a{ color: var(--ink); }
+
+footer{ background: var(--ink); border-top: 1px solid rgba(239,237,228,0.14); }
+.footer-row{ color: rgba(239,237,228,0.72); }
+.footer-row a:hover{ color: var(--off-white); }
