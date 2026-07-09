@@ -39,6 +39,13 @@ a:focus-visible, button:focus-visible{
   margin-bottom: 0.9rem;
 }
 
+.hero-subtitle{
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-top: 0.8rem;
+}
+
 /* ---------- Reveal on scroll ---------- */
 .reveal{
   opacity: 0;

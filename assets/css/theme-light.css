@@ -27,9 +27,21 @@ body{ background: var(--paper); color: var(--ink); font-size: 16px; line-height:
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--paper-line);
 }
+.site-header.scrolled{
+  background: rgba(15,14,11,0.78);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-bottom-color: transparent;
+  --icon-border: rgba(239,237,228,0.4);
+  --icon-fg: var(--off-white);
+  --icon-bg: var(--ink);
+}
 .wordmark{ color: var(--ink); }
 .wordmark .en{ color: var(--ink-soft); }
 .site-nav a{ color: var(--ink); }
+.site-header.scrolled .wordmark{ color: var(--off-white); }
+.site-header.scrolled .wordmark .en{ color: rgba(239,237,228,0.7); }
+.site-header.scrolled .site-nav a{ color: var(--off-white); }
 
 footer{ background: var(--ink); border-top: 1px solid rgba(239,237,228,0.14); }
 .footer-row{ color: rgba(239,237,228,0.72); }

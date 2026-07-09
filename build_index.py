@@ -85,7 +85,6 @@ HTML = f"""<!DOCTYPE html>
       <div class="section-intro reveal">
         <span class="eyebrow">PROPOSALS — 提案・コンペティション</span>
         <h2>設計競技・プロポーザルへの提案</h2>
-        <p>設計競技やプロポーザルへの提案案件です。以下は竣工物件ではありません。</p>
       </div>
 {proposals_html}
     </div>

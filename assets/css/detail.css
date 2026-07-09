@@ -1,5 +1,7 @@
 /* detail.css — work/proposal detail pages only */
 
+body{ background: var(--paper); }
+
 .hero{ position:relative; width:100%; height:100svh; overflow:hidden; background:var(--ink); }
 .hero img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .hero::after{
@@ -13,7 +15,7 @@
 .hero-title{ font-family:var(--serif); font-weight:500; font-size:clamp(2rem,5.5vw,3.6rem); text-wrap:balance; }
 .hero-sub{ font-size:.9rem; margin-top:.5rem; color:rgba(239,237,228,.82); }
 
-.detail-body{ padding:4.5rem 0 3rem; }
+.detail-body{ padding-top:4.5rem; padding-bottom:3rem; background:var(--paper); color:var(--ink); }
 .concept p{ font-size:1rem; color:var(--ink-soft); max-width:56ch; }
 .concept p + p{ margin-top:1rem; }
 
