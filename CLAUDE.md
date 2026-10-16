@@ -71,9 +71,10 @@ MyProject260914/
 ## 4. 残りの作業
 
 ### A. 事前整理（Git / GitHub）
-- [ ] 未コミット変更（CSS/JS/build スクリプト/生成 HTML/blog 一式/この CLAUDE.md）をコミット
-- [ ] `gh auth login`（ブラウザ認証のため人の手で実行。2026-10-16 時点で未ログイン）
-- [ ] `gh repo create <名前> --private --source=. --push`（リポジトリ名未決定）
+- [x] 未コミット変更をコミット（`c3afb1a`、2026-10-16）
+- [x] GitHub へ push：https://github.com/takehiro0716/sumi-architecture-lab-site （ブランチ `main`）
+      ※ gh CLI は未ログインのまま。push は git（Git Credential Manager）経由で成功
+- [ ] `gh auth login`（任意。PR/Issue 操作に gh を使う場合のみ）
 - [ ] 不要ファイル整理（`hello.py` など）
 
 ### B. WordPress 環境
@@ -108,7 +109,6 @@ MyProject260914/
 - [ ] セキュリティ・バックアップ系プラグイン、本番デプロイ手順
 
 ### 未決定事項（ユーザー確認が必要）
-- GitHub リポジトリ名
 - ローカル環境のツール、本番サーバー／ドメイン移行方針
 - カスタムフィールドの実装方式（ACF か自前か）
 - contact フォームの有無
@@ -124,3 +124,4 @@ MyProject260914/
 - GitHub 連携は `gh auth login` 途中で中断。ローカルに2コミット（`bfe196b` Initial commit /
   `bd8892f` Sync detail pages）、remote 未設定。
 - 2026-10-16：目的を「WordPress テーマ化と WordPress 導入」と明確化し、本ファイルを再構成。
+  ローカルブランチを `master` → `main` に変更し、GitHub（takehiro0716/sumi-architecture-lab-site）へ push。
