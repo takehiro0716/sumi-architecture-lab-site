@@ -3,10 +3,19 @@ import os
 
 ICONS = {
     'home': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5"/><rect x="5.5" y="10.5" width="13" height="9" rx="1"/><path d="M10 19.5v-5h4v5"/></svg>',
+    'blog': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h8l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-16a1 1 0 0 1 1-1z"/><path d="M14 3.5v4h4"/><path d="M8 12.5h8M8 16h8M8 9h3"/></svg>',
     'profile': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4 4.5-6 7.5-6s6 2 7.5 6"/></svg>',
     'contact': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 6.5l8.5 7 8.5-7"/></svg>',
+    'instagram': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.8" fill="currentColor" stroke="none"/></svg>',
     'arrow': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
 }
+
+INSTAGRAM_URL = 'https://www.instagram.com/sumi.architecture.lab/'
+
+NAV_TOGGLE = '''<button type="button" class="nav-toggle" aria-expanded="false" aria-label="メニューを開く">
+      <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>'''
 
 # PROJECTS: the single source of truth for every work/proposal.
 # `photos` is filled in below from assets/images/<cat>/<slug>/*.jpg
@@ -149,10 +158,13 @@ def header_html(active=None):
       <span class="ja">角建築研究室</span>
       <span class="en">SUMI ARCHITECTURE LAB</span>
     </a>
+    {NAV_TOGGLE}
     <nav class="icon-nav" aria-label="ページ移動">
       <a class="icon-btn{cls('home')}" href="../../index.html" aria-label="WORKS（トップ）" title="WORKS">{ICONS['home']}</a>
+      <a class="icon-btn{cls('blog')}" href="../../blog.html" aria-label="BLOG" title="BLOG">{ICONS['blog']}</a>
       <a class="icon-btn{cls('profile')}" href="../../profile.html" aria-label="PROFILE" title="PROFILE">{ICONS['profile']}</a>
       <a class="icon-btn{cls('contact')}" href="../../contact.html" aria-label="CONTACT" title="CONTACT">{ICONS['contact']}</a>
+      <a class="icon-btn" href="{INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer" aria-label="Instagram（別タブで開く）" title="Instagram">{ICONS['instagram']}</a>
     </nav>
   </header>
 """

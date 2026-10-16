@@ -98,6 +98,84 @@ a:focus-visible, button:focus-visible{
   .icon-btn svg{ width: 15px; height: 15px; }
 }
 
+.nav-toggle{
+  display: none;
+  width: 2.3rem; height: 2.3rem; border-radius: 50%;
+  align-items: center; justify-content: center;
+  border: 1px solid var(--icon-border);
+  background: none;
+  color: var(--icon-fg);
+  cursor: pointer;
+  flex: none;
+}
+.nav-toggle svg{ width: 17px; height: 17px; display:block; }
+.nav-toggle .icon-close{ display: none; }
+.nav-toggle[aria-expanded="true"] .icon-menu{ display: none; }
+.nav-toggle[aria-expanded="true"] .icon-close{ display: block; }
+
+@media (max-width: 640px){
+  .nav-toggle{ display: flex; }
+  .icon-nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.7rem;
+    position: absolute;
+    top: calc(100% + 0.9rem);
+    right: clamp(1.25rem, 4vw, 2.6rem);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 520ms var(--ease), transform 520ms var(--ease), visibility 520ms;
+  }
+  .nav-toggle[aria-expanded="true"] ~ .icon-nav{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Back to top ---------- */
+.to-top{
+  position: fixed;
+  right: clamp(1rem, 3vw, 1.8rem);
+  bottom: clamp(1rem, 3vw, 1.8rem);
+  z-index: 140;
+  width: 2.6rem; height: 2.6rem;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--icon-border);
+  background: var(--icon-bg);
+  color: var(--icon-fg);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 420ms var(--ease), transform 420ms var(--ease), visibility 420ms,
+    background 260ms var(--ease), color 260ms var(--ease), border-color 260ms var(--ease);
+  cursor: pointer;
+}
+.to-top svg{ width: 16px; height: 16px; display:block; }
+.to-top.is-visible{
+  opacity: 0.55;
+  visibility: visible;
+  transform: translateY(0);
+}
+.to-top.is-visible:hover, .to-top.is-visible:focus-visible{
+  opacity: 1;
+  background: var(--icon-fg);
+  color: var(--icon-bg);
+  border-color: var(--icon-fg);
+}
+@media (max-width: 640px){
+  .to-top{ width: 2.25rem; height: 2.25rem; }
+  .to-top svg{ width: 14px; height: 14px; }
+}
+@media print{ .to-top{ display: none; } }
+
 /* ---------- Footer ---------- */
 footer{ padding: 1.8rem clamp(1.25rem, 4vw, 3rem); }
 .footer-row{

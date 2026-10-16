@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from build_details import PROJECTS, ICONS
+from build_details import PROJECTS, ICONS, INSTAGRAM_URL, NAV_TOGGLE
 
 works = [p for p in PROJECTS if p['cat'] == 'works']
 proposals = [p for p in PROJECTS if p['cat'] == 'proposals']
@@ -66,10 +66,13 @@ HTML = f"""<!DOCTYPE html>
         <a href="#works">WORKS</a>
         <a href="#proposals">PROPOSALS</a>
       </nav>
+      {NAV_TOGGLE}
       <nav class="icon-nav" aria-label="ページ移動">
         <a class="icon-btn is-active" href="index.html" aria-label="WORKS（トップ）" title="WORKS">{ICONS['home']}</a>
+        <a class="icon-btn" href="blog.html" aria-label="BLOG" title="BLOG">{ICONS['blog']}</a>
         <a class="icon-btn" href="profile.html" aria-label="PROFILE" title="PROFILE">{ICONS['profile']}</a>
         <a class="icon-btn" href="contact.html" aria-label="CONTACT" title="CONTACT">{ICONS['contact']}</a>
+        <a class="icon-btn" href="{INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer" aria-label="Instagram（別タブで開く）" title="Instagram">{ICONS['instagram']}</a>
       </nav>
     </div>
   </header>
