@@ -37,6 +37,7 @@ MyProject260914/
 ├─ build_details.py      PROJECTS リスト（works/proposals 18件の正本）＋詳細ページ生成
 ├─ build_index.py        TOP 生成（build_details.PROJECTS を import）
 ├─ build_blog.py         POSTS リスト（ブログ 20件の正本）＋一覧/記事ページ生成
+├─ handoff/              MacBook への引き継ぎ資料（セットアップ手順・現状・次の作業）
 ├─ hello.py              初期の動作確認用（不要）
 └─ sumi-architecture.zip 配布用アーカイブ（2026-09-14 作成、.gitignore 対象）
 ```
@@ -80,7 +81,9 @@ MyProject260914/
 ### B. WordPress 環境
 - [ ] ローカル開発環境を決めて構築（例：Local / wp-env(Docker) / XAMPP など）
 - [ ] 本番サーバー・ドメイン（既存 sumi-al.jp の移行方法）を確認
-- [ ] 既存 sumi-al.jp が WordPress かどうか、移行・置き換え方針を確認
+- [ ] 既存 sumi-al.jp の移行・置き換え方針を確認
+      （写真が `image.jimcdn.com` 配信のため **Jimdo 製の可能性が高い**＝WordPress ではない。
+      新規 WordPress で置き換え＋ドメイン切替＋旧 URL リダイレクトになる見込み）
 
 ### C. テーマ化（`wp-content/themes/sumi-al/` を想定）
 - [ ] テーマ骨格：`style.css`（テーマヘッダ）, `functions.php`, `header.php`, `footer.php`, `index.php`
@@ -125,3 +128,5 @@ MyProject260914/
   `bd8892f` Sync detail pages）、remote 未設定。
 - 2026-10-16：目的を「WordPress テーマ化と WordPress 導入」と明確化し、本ファイルを再構成。
   ローカルブランチを `master` → `main` に変更し、GitHub（takehiro0716/sumi-architecture-lab-site）へ push。
+  以降は **MacBook で作業を継続**する予定。`handoff/` に引き継ぎ資料を作成
+  （Mac では `py` ではなく `python3`、プロジェクトは `git clone` で取得）。
